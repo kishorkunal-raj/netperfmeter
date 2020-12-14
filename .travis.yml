@@ -293,6 +293,87 @@ matrix:
       - COVERITY_SCAN_NOTIFICATION_EMAIL="dreibh@simula.no"
       - COVERITY_SCAN_BRANCH="coverity_scan"
 
+# Adding ppc64le jobs
+ # ====== Ubuntu 20.04 (Focal Fossa) ======================================
+   - name: "Ubuntu 20.04 (Focal Fossa) with GCC"
+     os: linux
+     dist: focal
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:focal" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++"
+   - name: "Ubuntu 20.04 (Focal Fossa) with Clang"
+     os: linux
+     dist: focal
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:focal" VARIANT="ubuntu" TOOL="compile" COMPILER_C="clang" COMPILER_CXX="clang++"
+   - name: "Ubuntu 20.04 (Focal Fossa) packaging with pbuilder"
+     dist: focal
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:focal" VARIANT="ubuntu" TOOL="pbuilder"
+ 
+ # ====== Ubuntu 18.04 (Bionic Beaver) ====================================
+   - name: "Ubuntu 18.04 (Bionic Beaver) with GCC"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:bionic" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++"
+   - name: "Ubuntu 18.04 (Bionic Beaver) with Clang"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:bionic" VARIANT="ubuntu" TOOL="compile" COMPILER_C="clang" COMPILER_CXX="clang++"
+
+   - name: "Ubuntu 18.04 (Bionic Beaver) packaging with pbuilder"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:bionic" VARIANT="ubuntu" TOOL="pbuilder"
+
+   # ====== Ubuntu 16.04 (Xenial Xerus) =====================================
+   - name: "Ubuntu 16.04 (Xenial Xerus) with GCC"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:xenial" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++"
+   - name: "Ubuntu 16.04 (Xenial Xerus) with Clang"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:xenial" VARIANT="ubuntu" TOOL="compile" COMPILER_C="clang" COMPILER_CXX="clang++"
+   - name: "Ubuntu 16.04 (Xenial Xerus) packaging with pbuilder"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:xenial" VARIANT="ubuntu" TOOL="pbuilder"
+
+   # ====== Ubuntu 14.04 (Trusty Tahr) ======================================
+   - name: "Ubuntu 14.04 (Trusty Tahr) with GCC"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:trusty" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++"
+   - name: "Ubuntu 14.04 (Trusty Tahr) with Clang"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:trusty" VARIANT="ubuntu" TOOL="compile" COMPILER_C="clang" COMPILER_CXX="clang++"
+   - name: "Ubuntu 14.04 (Trusty Tahr) packaging with pbuilder"
+     os: linux
+     dist: bionic
+     arch: ppc64le
+     group: travis_latest
+     env: DOCKER="ubuntu:trusty" VARIANT="ubuntu" TOOL="pbuilder"
+
 
 before_install:
   - ci/before-install
